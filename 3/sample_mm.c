@@ -4,13 +4,10 @@
 #include <sys/time.h>
 #include <sys/resource.h>
 
-/*
-    Define macro for a matrix described in Lec04
-*/
 
-/*
-    Insert e_time() explained in Ex01
-*/
+#define MAT(p,j,i) p[(j)*N +(i)]
+
+double e_time(void);
 
 int main (int argc, char* argv[]) {
     unsigned int i, j, k;
@@ -48,4 +45,10 @@ int main (int argc, char* argv[]) {
     Release memory for matrices
 */
     return 0;
+}
+
+double e_time(void){
+  static struct timeval now;
+  gettimeofday(&now, NULL);
+  return (double)(now.tv_sec + now.tv_usec/1000000.0);
 }
