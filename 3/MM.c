@@ -4,7 +4,7 @@
 #include <time.h>
 
 
-#define TIMES 10
+#define TIMES 3
 #define MAT(p,j,i) p[(j)*N +(i)]
 
 void mat_gen(float *, float *, float *, double *, double *, double *, int);
