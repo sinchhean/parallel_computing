@@ -40,10 +40,10 @@ for(i = 0; i < n_N; i++){
     
     N = M[i];
 
-    mat_gen(Af,Bf,Cf,Ad,Bd,Cd,M[i]);
+    mat_gen(Af,Bf,Cf,Ad,Bd,Cd,N);
 
     st = e_time();
-    mat_mult_float(Af,Bf,Cf,N,3);
+    mat_mult_float(Af,Bf,Cf,N,1);
     en = e_time();
     avg_etime_float += en-st;
 
@@ -59,7 +59,7 @@ for(i = 0; i < n_N; i++){
     free(Bd);
     free(Cd);
   }
-  printf("N=%d : float_avgt = %.10lf, double_avgt = %.10lf\n",M[i],avg_etime_float/TIMES,avg_etime_double/TIMES);
+  printf("N=%d : float_avgt = %.10lf, double_avgt = %.10lf\n",N,avg_etime_float/TIMES,avg_etime_double/TIMES);
 }
 
 
