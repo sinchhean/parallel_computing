@@ -1,9 +1,0 @@
-N=8 : float_avgt = 0.0000073910, double_avgt = 0.0000076294
-N=16 : float_avgt = 0.0000669956, double_avgt = 0.0000669956
-N=32 : float_avgt = 0.0005385876, double_avgt = 0.0005389849
-N=64 : float_avgt = 0.0032952627, double_avgt = 0.0029529730
-N=128 : float_avgt = 0.0170916716, double_avgt = 0.0168162982
-N=256 : float_avgt = 0.1139076551, double_avgt = 0.1186682383
-N=512 : float_avgt = 0.9280246099, double_avgt = 1.3487652143
-N=1024 : float_avgt = 11.0051062902, double_avgt = 11.5615548293
-N=2048 : float_avgt = 91.3325181007, double_avgt = 98.7147914569
