@@ -43,12 +43,12 @@ for(i = 0; i < n_N; i++){
     mat_gen(Af,Bf,Cf,Ad,Bd,Cd,N);
 
     st = e_time();
-    mat_mult_float(Af,Bf,Cf,N,1);
+    mat_mult_float(Af,Bf,Cf,N,3);
     en = e_time();
     avg_etime_float += en-st;
 
     st = e_time();
-    mat_mult_double(Ad,Bd,Cd,N,1);
+    mat_mult_double(Ad,Bd,Cd,N,3);
     en = e_time();
     avg_etime_double += en-st;
 
@@ -70,10 +70,10 @@ void mat_gen(float *xf, float *yf, float *zf, double *xd, double *yd, double *zd
   int i,j;
   for(j = 0; j < N; j ++){
     for(i = 0; i < N; i++){
-      MAT(xf,j,i) = (float)rand()/(float)(RAND_MAX + 1);
-      MAT(yf,j,i) = (float)rand()/(float)(RAND_MAX + 1);
-      MAT(xd,j,i) = (double)MAT(xf,j,i);
-      MAT(yd,j,i) = (double)MAT(yf,j,i);
+      MAT(xd,j,i) = (double)rand()/(double)(RAND_MAX + 1);
+      MAT(yd,j,i) = (double)rand()/(double)(RAND_MAX + 1);
+      MAT(xf,j,i) = (float)MAT(xd,j,i);
+      MAT(yf,j,i) = (float)MAT(yd,j,i);
       MAT(zf,j,i) = 0.0;
       MAT(zd,j,i) = 0.0;
     }
