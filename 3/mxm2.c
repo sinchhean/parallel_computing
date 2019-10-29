@@ -6,7 +6,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#define TIMES 5
+#define TIMES 10
 #define MAT(p,j,i) p[(j)*N +(i)]
 
 int* convert_string_to_int_array(char*, int*);
@@ -87,8 +87,13 @@ while((c = getopt(argc, argv, "o:d:")) != -1){
 
 //setting default option
 if(strcmp(ovalue, "") == 0){
-  printf("Default loop order ijk set with : -o ijk\n");
-  ovalue = "ijk";
+  if(strcmp(dvalue, "not null") == 0){
+    printf("Loop order set to ijk.\n");
+    ovalue = "ijk";
+  }else{ 
+    printf("Default loop order ijk set with : -o ijk\n");
+    ovalue = "ijk";
+  }
 }
 if(strcmp(dvalue, "") == 0){
   printf("Default matrix sizes are 8 and 16 set with : -d \"8 16\"\n");
@@ -113,7 +118,7 @@ if(strcmp(ovalue, "ijk") == 0)
   option = 3;
 }else
 {
-  printf("There is no %s loop order set. Setting to default loop order ijk.\n",ovalue);
+  printf("There is no \"%s\" loop order set. Setting to default loop order ijk.\n",ovalue);
   option = 1;
 }
 

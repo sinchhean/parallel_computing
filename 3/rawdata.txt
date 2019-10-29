@@ -1,0 +1,40 @@
+std2dc19:3 s1250250[53]$ ./mm_o0 -o ijk -d "8 16 32 64 128 256 512 1024 2048"
+N=8 : float_avgt = 0.0000021935, double_avgt = 0.0000026226
+N=16 : float_avgt = 0.0000204563, double_avgt = 0.0000205517
+N=32 : float_avgt = 0.0001638889, double_avgt = 0.0001625538
+N=64 : float_avgt = 0.0013225079, double_avgt = 0.0013501644
+N=128 : float_avgt = 0.0112663269, double_avgt = 0.0113707542
+N=256 : float_avgt = 0.1051543713, double_avgt = 0.1303865433
+N=512 : float_avgt = 1.0617877960, double_avgt = 1.0962519646
+N=1024 : float_avgt = 12.7143164158, double_avgt = 18.1388740063
+N=2048 : float_avgt = 212.7360206127, double_avgt = 227.8586548328
+std2dc19:3 s1250250[54]$ ./mm_o2 -o ijk -d "8 16 32 64 128 256 512 1024 2048"
+N=8 : float_avgt = 0.0000029564, double_avgt = 0.0000030041
+N=16 : float_avgt = 0.0000260830, double_avgt = 0.0000261307
+N=32 : float_avgt = 0.0002092838, double_avgt = 0.0002129555
+N=64 : float_avgt = 0.0013106823, double_avgt = 0.0012443066
+N=128 : float_avgt = 0.0046246529, double_avgt = 0.0045689583
+N=256 : float_avgt = 0.0315770149, double_avgt = 0.0347019672
+N=512 : float_avgt = 0.2920075893, double_avgt = 0.3059695721
+N=1024 : float_avgt = 4.5836266041, double_avgt = 5.6692843437
+N=2048 : float_avgt = 82.4365135670, double_avgt = 85.8119852066
+std2dc19:3 s1250250[55]$ ./mm_o2 -o jki -d "8 16 32 64 128 256 512 1024 2048"
+N=8 : float_avgt = 0.0000020504, double_avgt = 0.0000010014
+N=16 : float_avgt = 0.0000160694, double_avgt = 0.0000120163
+N=32 : float_avgt = 0.0001084805, double_avgt = 0.0001052380
+N=64 : float_avgt = 0.0008464336, double_avgt = 0.0008250237
+N=128 : float_avgt = 0.0066710472, double_avgt = 0.0073505878
+N=256 : float_avgt = 0.0741280556, double_avgt = 0.0941179752
+N=512 : float_avgt = 0.8113266468, double_avgt = 0.8585085869
+N=1024 : float_avgt = 10.9750061989, double_avgt = 11.3639858246
+N=2048 : float_avgt = 131.6580794811, double_avgt = 139.0571484089
+std2dc19:3 s1250250[56]$ ./mm_o2 -o kij -d "8 16 32 64 128 256 512 1024 2048"
+N=8 : float_avgt = 0.0000016212, double_avgt = 0.0000011921
+N=16 : float_avgt = 0.0000182152, double_avgt = 0.0000125885
+N=32 : float_avgt = 0.0001092911, double_avgt = 0.0001041412
+N=64 : float_avgt = 0.0008355618, double_avgt = 0.0008239269
+N=128 : float_avgt = 0.0068949699, double_avgt = 0.0078691006
+N=256 : float_avgt = 0.0759863377, double_avgt = 0.0952757359
+N=512 : float_avgt = 0.8302345753, double_avgt = 0.8861446857
+N=1024 : float_avgt = 11.3630523682, double_avgt = 12.0518947601
+N=2048 : float_avgt = 153.0388559341, double_avgt = 162.1055141449
