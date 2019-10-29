@@ -201,7 +201,7 @@ void mat_mult_float(float *xf, float *yf, float *zf, int N, int c){
       for(k  = 0; k < N; k++){
         for(i = 0; i < N; i++){
           for(j = 0; j < N; j++){
-            MAT(zf,j,i) += MAT(xf,j,k) * MAT(yf,k,i);
+            MAT(zf,i,j) += MAT(xf,i,k) * MAT(yf,k,j);
           }
         }
       }
@@ -234,7 +234,7 @@ void mat_mult_double(double *xf, double *yf, double *zf, int N, int c){
       for(k  = 0; k < N; k++){
         for(i = 0; i < N; i++){
           for(j = 0; j < N; j++){
-            MAT(zf,j,i) += MAT(xf,j,k) * MAT(yf,k,i);
+            MAT(zf,i,j) += MAT(xf,i,k) * MAT(yf,k,j);
           }
         }
       }
