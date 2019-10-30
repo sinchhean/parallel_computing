@@ -1,5 +1,5 @@
 set term pngcairo
-set output "double_loop_order_O2.png"
+set output "double_loop_order_O2_2.png"
 set title "Performance for matrix-multiplication as double precision and \nloop orders with -O2 optimization"
 set xlabel "Size of matrix"
 set ylabel "Performance/MFLOPS"

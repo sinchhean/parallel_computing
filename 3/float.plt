@@ -1,5 +1,5 @@
 set term pngcairo
-set output "float.png"
+set output "float2.png"
 set title "Performance for matrix-multiplication as float precision"
 set xlabel "Size of matrix"
 set ylabel "Performance/MFLOPS"
