@@ -6,7 +6,7 @@
 #include <string.h>
 #include <ctype.h>
 
-
+#define MAX_BLOCKSIXE 256
 #define MAT(p,j,i) p[(j)*N +(i)]
 
 int* convert_string_to_int_array(char*, int*);
@@ -21,12 +21,10 @@ double e_time(void);
 int main(int argc, char** argv){
 int i,j,k;
 int I,J,K;
-int block;
+int *block;
 int option;
 int N;
 int *M;
-int flag1 = 0;
-int flag2 = 0;
 float *Af, *Bf, *Cf;
 double *Ad, *Bd, *Cd;
 float *Cb_float;
@@ -39,31 +37,15 @@ double etime_block_double = 0;
 int c;
 int index;
 int n_N = 0;
+int n_block = 0;
 char *ovalue = "";
 char *dvalue = "";
+char *bvalue = "";
 
 srand(time(NULL)); //seed for the random number
 
-for(i = 0; i < argc-1; i++){ 
-  int check = atoi(argv[i+1]);
-  if(check == 0){
-    flag1 = 1; //there is none integer
-    break;
-  }
-}
-
-if(flag1 == 0){ // first type of argument only matrix sizes as data
-    n_N = argc-1;
-    M = (int*)malloc(n_N*sizeof(int));
-
-    for(i = 0; i < n_N; i++){
-      M[i] = atoi(argv[i+1]);
-    }
-    flag2 = 1; 
-    dvalue = "not null";
-}else{
 //option arguments handling 
-while((c = getopt(argc, argv, "o:d:")) != -1){
+while((c = getopt(argc, argv, "o:d:b:")) != -1){
   switch(c)
   {
     case 'o':
@@ -71,6 +53,9 @@ while((c = getopt(argc, argv, "o:d:")) != -1){
       break;
     case 'd':
       dvalue = optarg;
+      break;
+    case 'b':
+      bvalue = optarg;
       break;
     case '?':
       if (isprint(optopt))
@@ -90,28 +75,32 @@ while((c = getopt(argc, argv, "o:d:")) != -1){
     if(atoi(argv[index]) == 0)
       printf ("Non-option argument %s\n", argv[index]);
   }
-}
+
 
 //setting default option
 if(strcmp(ovalue, "") == 0){
-  if(strcmp(dvalue, "not null") == 0){
-    printf("Loop order set to ijk.\n");
-    ovalue = "ijk";
-  }else{ 
-    printf("Default loop order ijk set with : -o ijk\n");
-    ovalue = "ijk";
-  }
+  printf("Loop order set to ijk.\n");
+  ovalue = "ijk";
 }
 if(strcmp(dvalue, "") == 0){
   printf("Default matrix sizes are 8 and 16 set with : -d \"8 16\"\n");
   dvalue = "8 16";
 }
-
-
-if(flag2 == 0){
-//convert string to array of integers for matrix sizes
-  M = convert_string_to_int_array(dvalue, &n_N);
+if(strcmp(bvalue, "") == 0){
+  printf("Default bloack size is set to 2 : -b 2\n");
+  bvalue = '2';
 }
+
+M = convert_string_to_int_array(dvalue, &n_N);
+block = convert_string_to_int_array(bvalue, &n_block);
+
+//checking and adjusting size of matrix and block size
+for(i = 0; i < n_block; i++){
+  if(block[i] == M[i] || block[i] > MAX_BLOCKSIZE){
+    block[i] = M[i]/2;
+  }
+}
+
 
 //setting loop order
 if(strcmp(ovalue, "ijk") == 0) 
