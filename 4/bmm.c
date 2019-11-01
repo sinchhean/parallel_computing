@@ -112,9 +112,11 @@ int main(int argc, char** argv){
 
 	printf("%5s %4s %20s %20s %20s %20s\n","block","N","etime_float","etime_block_float","etime_double","etime_block_double");
 
+//begin calculation loop
 	for(j = 0; j < n_block; j++) {
 		for(i = 0; i < n_N; i++) {
-			if(block[j] <= MAX_BLOCKSIZE && block[j] <= M[i]) {
+			//if(block[j] <= MAX_BLOCKSIZE && block[j] <= M[i]) {
+
 				Af = (float *)malloc(sizeof(float)*M[i]*M[i]);
 				Bf = (float *)malloc(sizeof(float)*M[i]*M[i]);
 				Cf = (float *)malloc(sizeof(float)*M[i]*M[i]);
@@ -140,6 +142,7 @@ int main(int argc, char** argv){
 				en = e_time();
 				etime_double = en-st;
 
+
 				//blocked matrix multiplication
 				st = e_time();
 				block_mm_float(Af,Bf,Cb_float,N,block[j]);
@@ -153,32 +156,36 @@ int main(int argc, char** argv){
 
 
 				printf("%5d %4d %20.10e %20.10e %20.10e %20.10e\n",block[j], N, etime_float, etime_block_float, etime_double, etime_block_double);
-				////////////checking start//////////////////////////
+
+////////////checking start//////////////////////////
 /*
-        for(j = 0; j < N; j++){
+        for(m = 0; m < N; m++){
         for(k = 0; k < N; k++){
-                printf("%.16f ",Cf[(j)*N +(k)]);
+                printf("%.16f ",Cf[(m)*N +(k)]);
         }
         printf("\n");
         }
         printf("\n\n");
-        for(j = 0; j < N; j++){
+
+        for(m = 0; m < N; m++){
         for(k = 0; k < N; k++){
-                printf("%.16f ",Cb_float[(j)*N +(k)]);
+                printf("%.16f ",Cb_float[(m)*N +(k)]);
         }
         printf("\n");
         }
         printf("\n\n");
-        for(j = 0; j < N; j++){
+
+        for(m = 0; m < N; m++){
         for(k = 0; k < N; k++){
-                printf("%.16lf ",Cd[(j)*N +(k)]);
+                printf("%.16lf ",Ad[(m)*N +(k)]);
         }
         printf("\n");
         }
         printf("\n\n");
-        for(j = 0; j < N; j++){
+
+        for(m = 0; m < N; m++){
         for(k = 0; k < N; k++){
-                printf("%.16lf ",Cb_double[(j)*N +(k)]);
+                printf("%.16lf ",Bd[(m)*N +(k)]);
         }
         printf("\n");
         }
@@ -201,7 +208,7 @@ int main(int argc, char** argv){
 				printf("test=%d",test);
 				printf("\n");
 */
-				/////////////checking end//////////////////////////
+/////////////checking end//////////////////////////
 				free(Af);
 				free(Bf);
 				free(Cf);
@@ -210,7 +217,7 @@ int main(int argc, char** argv){
 				free(Cd);
 				free(Cb_float);
 				free(Cb_double);
-			}
+			//}
 		}
 	}
 	return 0;
@@ -245,6 +252,7 @@ void block_mm_float(float *xf, float *yf, float *zf, int N, int bsize){
 	int I, J, K;
 	int i, j, k;
 	int block = bsize;
+	if(block > N) block = N;
 	for(I = 0; I < N; I+=block) {
 		for(J = 0; J < N; J+=block) {
 			for(K = 0; K < N; K+=block) {
@@ -264,6 +272,7 @@ void block_mm_double(double *xf, double *yf, double *zf, int N, int bsize){
 	int I, J, K;
 	int i, j, k;
 	int block = bsize;
+	if(block > N) block = N;
 	for(I = 0; I < N; I+=block) {
 		for(J = 0; J < N; J+=block) {
 			for(K = 0; K < N; K+=block) {
@@ -359,7 +368,7 @@ int* convert_string_to_int_array(char* c, int* n)
 	char *start = p;
 	int v;
 	while(1 == sscanf(p, "%d%n", &v, &len)) {
-		++*n;                                                                    //count elements
+		++*n;  //count elements
 		p += len;
 	}
 	int *array=(int*)malloc(*n*sizeof(int));

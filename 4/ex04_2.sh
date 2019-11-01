@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 #/usr/local/gnu/bin/bash
-for b in {5..6}; do
+for b in {6..7}; do
     # Change the block size bSize as 2, 4, 8, 16, 32, 64, 128, 256
     bSize=$((2 ** b))
     echo "--------------------------------------------------------------------"
@@ -11,12 +11,12 @@ for b in {5..6}; do
         n=$((2 ** i))
         printf "$n "
 
-        if [ -f "tmp" ]; then
-            rm tmp
+        if [ -f "tmp2" ]; then
+            rm tmp2
         fi
         # Repeat the measurement of computation time 5 times
          for j in {1..5}; do
-             ./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp
+             ./bmmtest2 -o ijk -d $n -b $bSize | tail -n +2 >> tmp2
          done
         #./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
         #./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
@@ -26,6 +26,6 @@ for b in {5..6}; do
 
         # Calculate and display average elapsed time
         #cat tmp
-        cat tmp | awk '{fsum += $3} {bfsum += $4} {dsum += $5} {bdsum += $6} END {print fsum/NR FS bfsum/NR FS dsum/NR FS bdsum/NR}'
+        cat tmp2 | awk '{fsum += $3} {bfsum += $4} {dsum += $5} {bdsum += $6} END {print fsum/NR FS bfsum/NR FS dsum/NR FS bdsum/NR}'
     done
 done
