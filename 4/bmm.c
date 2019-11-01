@@ -90,7 +90,7 @@ int main(int argc, char** argv){
 	}
 	if(strcmp(bvalue, "") == 0) {
 		printf("Default bloack size is set to 2 : -b 2\n");
-		bvalue = '2';
+		bvalue = "2";
 	}
 
 	M = convert_string_to_int_array(dvalue, &n_N);

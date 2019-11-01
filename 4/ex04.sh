@@ -15,14 +15,14 @@ for b in {1..8}; do
             rm tmp
         fi
         # Repeat the measurement of computation time 5 times
-        # for j in {1..5}; do
-        #     ./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp
-        # done
-        ./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
-        ./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
-        ./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
-        ./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
-        ./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp
+         for j in {1..10}; do
+             ./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp
+         done
+        #./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
+        #./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
+        #./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
+        #./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp &
+        #./bmmtest -o ijk -d $n -b $bSize | tail -n +2 >> tmp
 
         # Calculate and display average elapsed time
         #cat tmp
