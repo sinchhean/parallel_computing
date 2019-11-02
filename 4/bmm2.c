@@ -147,7 +147,6 @@ int main(int argc, char** argv){
     }
     d_output_pointer += sprintf(d_output_pointer,"\n");
   }
-printf("n_N=%d, n_block=%d\n",n_N,n_block);
   //begin calculation loop
   for(i = 0; i < n_N; i++) {
     //allocate memory for data
@@ -181,7 +180,6 @@ printf("n_N=%d, n_block=%d\n",n_N,n_block);
 
 
     for(j = 0; j < n_block; j++) {
-      //if(block[j] <= MAX_BLOCKSIZE && block[j] <= M[i]) {
       //blocked matrix multiplication
       if(fflag == 1) {
         st = e_time();
@@ -250,8 +248,6 @@ printf("n_N=%d, n_block=%d\n",n_N,n_block);
                 printf("\n");
  */
 /////////////checking end//////////////////////////
-
-      //}
     }
     if(fflag==1) f_output_pointer += sprintf(f_output_pointer,"\n");
     if(dflag==1) d_output_pointer += sprintf(d_output_pointer,"\n");
