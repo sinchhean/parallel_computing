@@ -57,10 +57,10 @@ int main(int argc, char** argv){
     switch(c)
     {
     case 'f':
-      dflag = 1;
+      fflag = 1;
       break;
     case 'd':
-      fflag = 1;
+      dflag = 1;
       break;
     case 'o':
       ovalue = optarg;
