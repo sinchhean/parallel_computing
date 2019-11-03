@@ -195,62 +195,12 @@ int main(int argc, char** argv){
         etime_block_double = en-st;
 				d_output_pointer += sprintf(d_output_pointer,"%15.10e ", etime_block_double);
       }
-
-////////////checking start//////////////////////////
-/*
-        for(m = 0; m < N; m++){
-        for(k = 0; k < N; k++){
-                printf("%.16f ",Cf[(m)*N +(k)]);
-        }
-        printf("\n");
-        }
-        printf("\n\n");
-
-        for(m = 0; m < N; m++){
-        for(k = 0; k < N; k++){
-                printf("%.16f ",Cb_float[(m)*N +(k)]);
-        }
-        printf("\n");
-        }
-        printf("\n\n");
-
-        for(m = 0; m < N; m++){
-        for(k = 0; k < N; k++){
-                printf("%.16lf ",Ad[(m)*N +(k)]);
-        }
-        printf("\n");
-        }
-        printf("\n\n");
-
-        for(m = 0; m < N; m++){
-        for(k = 0; k < N; k++){
-                printf("%.16lf ",Bd[(m)*N +(k)]);
-        }
-        printf("\n");
-        }
-        printf("\n\n");
-
-                int test = 0;
-                for(m = 0; m < N; m++) {
-                    for(k = 0; k < N; k++) {
-                        double diff = abs(Cd[(m)*N +(k)] - Cb_double[(m)*N +(k)]);
-                        if(diff <= BIGGEST_DIFF && diff >= SMALLEST_DIFF) {
-                        }else{
-                            printf("There is different between ");
-                            printf("%.32e, %.32e : ",Cd[(m)*N +(k)], Cb_double[(m)*N +(k)]);
-                            printf("%.32e\n",diff);
-                            test++;
-                        }
-                    }
-                }
-
-                printf("test=%d",test);
-                printf("\n");
- */
-/////////////checking end//////////////////////////
+      //reset Cb_float and Cb_double
+      reset_mat(Cb_float,Cb_double,M[i]);
     }
     if(fflag==1) f_output_pointer += sprintf(f_output_pointer,"\n");
     if(dflag==1) d_output_pointer += sprintf(d_output_pointer,"\n");
+    //free memory
     free(Af);
     free(Bf);
     free(Cf);
