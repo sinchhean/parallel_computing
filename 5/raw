@@ -1,0 +1,124 @@
+std4dc9:5 s1250250[57]$ ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.007612
+std4dc9:5 s1250250[85]$ ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.007686
+std4dc9:5 s1250250[86]$ ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.007587
+std4dc9:5 s1250250[87]$ ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.007580
+std4dc9:5 s1250250[88]$ ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.007578
+-------------------------------------------------------------------------------------
+std4dc9:5 s1250250[58]$ mpirun -np 1 ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.007613
+std4dc9:5 s1250250[73]$ mpirun -np 1 ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.007580
+std4dc9:5 s1250250[74]$ mpirun -np 1 ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.006852
+std4dc9:5 s1250250[75]$ mpirun -np 1 ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.007587
+std4dc9:5 s1250250[76]$ mpirun -np 1 ./pi 1000
+pi is approximately 3.1415926535897643, Error is 0.0000000000000289
+wall clock time = 0.006851
+
+-------------------------------------------------------------------------------------
+std4dc9:5 s1250250[60]$ mpirun -np 2 ./pi 1000
+pi is approximately 3.1415926535899388, Error is 0.0000000000001457
+wall clock time = 0.003882
+std4dc9:5 s1250250[69]$ mpirun -np 2 ./pi 1000
+pi is approximately 3.1415926535899388, Error is 0.0000000000001457
+wall clock time = 0.004309
+std4dc9:5 s1250250[70]$ mpirun -np 2 ./pi 1000
+pi is approximately 3.1415926535899388, Error is 0.0000000000001457
+wall clock time = 0.004183
+std4dc9:5 s1250250[71]$ mpirun -np 2 ./pi 1000
+pi is approximately 3.1415926535899388, Error is 0.0000000000001457
+wall clock time = 0.004019
+std4dc9:5 s1250250[72]$ mpirun -np 2 ./pi 1000
+pi is approximately 3.1415926535899388, Error is 0.0000000000001457
+wall clock time = 0.004514
+-------------------------------------------------------------------------------------
+std4dc9:5 s1250250[62]$ mpirun -np 3 ./pi 1000
+pi is approximately 3.1415926535899086, Error is 0.0000000000001155
+wall clock time = 0.096226
+-------------------------------------------------------------------------------------
+std4dc9:5 s1250250[63]$ mpirun -np 4 ./pi 1000
+pi is approximately 3.1415926535899033, Error is 0.0000000000001101
+wall clock time = 0.467701
+
+============================================================================================
+std4dc9:5 s1250250[94]$ mpirun -np 1 ./pi 10000
+pi is approximately 3.1415924535897211, Error is 0.0000002000000721
+wall clock time = 0.071233
+std4dc9:5 s1250250[95]$ mpirun -np 1 ./pi 10000
+pi is approximately 3.1415924535897211, Error is 0.0000002000000721
+wall clock time = 0.075471
+std4dc9:5 s1250250[96]$ mpirun -np 1 ./pi 10000
+pi is approximately 3.1415924535897211, Error is 0.0000002000000721
+wall clock time = 0.075460
+std4dc9:5 s1250250[97]$ mpirun -np 1 ./pi 10000
+pi is approximately 3.1415924535897211, Error is 0.0000002000000721
+wall clock time = 0.071231
+std4dc9:5 s1250250[98]$ mpirun -np 1 ./pi 10000
+pi is approximately 3.1415924535897211, Error is 0.0000002000000721
+wall clock time = 0.070090
+-------------------------------------------------------------------------------------------
+std4dc9:5 s1250250[101]$ mpirun -np 2 ./pi 10000
+pi is approximately 3.1415924535899751, Error is 0.0000001999998180
+wall clock time = 0.037941
+std4dc9:5 s1250250[102]$ mpirun -np 2 ./pi 10000
+pi is approximately 3.1415924535899751, Error is 0.0000001999998180
+wall clock time = 0.036569
+std4dc9:5 s1250250[103]$ mpirun -np 2 ./pi 10000
+pi is approximately 3.1415924535899751, Error is 0.0000001999998180
+wall clock time = 0.037820
+std4dc9:5 s1250250[104]$ mpirun -np 2 ./pi 10000
+pi is approximately 3.1415924535899751, Error is 0.0000001999998180
+wall clock time = 0.037815
+std4dc9:5 s1250250[105]$ mpirun -np 2 ./pi 10000
+pi is approximately 3.1415924535899751, Error is 0.0000001999998180
+wall clock time = 0.038227
+----------------------------------------------------------------------------------------
+================================================================================================
+std4dc9:5 s1250250[106]$ mpirun -np 1 ./pi 100000
+pi is approximately 3.1415926335904265, Error is 0.0000000199993666
+wall clock time = 0.717780
+std4dc9:5 s1250250[107]$ mpirun -np 1 ./pi 100000
+pi is approximately 3.1415926335904265, Error is 0.0000000199993666
+wall clock time = 0.692773
+std4dc9:5 s1250250[108]$ mpirun -np 1 ./pi 100000
+pi is approximately 3.1415926335904265, Error is 0.0000000199993666
+wall clock time = 0.682574
+std4dc9:5 s1250250[109]$ mpirun -np 1 ./pi 100000
+pi is approximately 3.1415926335904265, Error is 0.0000000199993666
+wall clock time = 0.682894
+std4dc9:5 s1250250[110]$ mpirun -np 1 ./pi 100000
+pi is approximately 3.1415926335904265, Error is 0.0000000199993666
+wall clock time = 0.701377
+--------------------------------------------------------------------------------------------
+std4dc9:5 s1250250[114]$ mpirun -np 2 ./pi 100000
+pi is approximately 3.1415926335900224, Error is 0.0000000199997707
+wall clock time = 0.353025
+std4dc9:5 s1250250[115]$ mpirun -np 2 ./pi 100000
+pi is approximately 3.1415926335900224, Error is 0.0000000199997707
+wall clock time = 0.353492
+std4dc9:5 s1250250[116]$ mpirun -np 2 ./pi 100000
+pi is approximately 3.1415926335900224, Error is 0.0000000199997707
+wall clock time = 0.363722
+std4dc9:5 s1250250[118]$ mpirun -np 2 ./pi 100000
+pi is approximately 3.1415926335900224, Error is 0.0000000199997707
+wall clock time = 0.370090
+std4dc9:5 s1250250[120]$ mpirun -np 2 ./pi 100000
+pi is approximately 3.1415926335900224, Error is 0.0000000199997707
+wall clock time = 0.347404
+-------------------------------------------------------------------------------------------
+

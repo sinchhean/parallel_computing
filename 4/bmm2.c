@@ -193,13 +193,75 @@ int main(int argc, char** argv){
         block_mm_double(Ad,Bd,Cb_double,M[i],block[j]);
         en = e_time();
         etime_block_double = en-st;
-				d_output_pointer += sprintf(d_output_pointer,"%15.10e ", etime_block_double);
+	d_output_pointer += sprintf(d_output_pointer,"%15.10e ", etime_block_double);
       }
+      //checking differences between result from naive and blocked algorithm
+      if(fflag == 1){
+         /* /////////////printout result to check for float
+        for(m = 0; m < M[i]; m++){
+          for(k = 0; k < M[i]; k++){
+	    printf("%.16lf ",Cf[(m)*M[i] +(k)]);
+          }
+          printf("\n");
+        }
+        printf("\n\n");
+        for(m = 0; m < M[i]; m++){
+          for(k = 0; k < M[i]; k++){
+	    printf("%.16lf ",Cb_float[(m)*M[i] +(k)]);
+          }
+          printf("\n");
+        }
+	printf("\n\n");
+        */
+        //checking differences
+        for(m = 0; m < M[i]; m++){
+          for(k = 0; k < M[i]; k++){
+            float fdiff = abs(Cf[(m)*M[i] +(k)] - Cb_float[(m)*M[i] +(k)]);
+            //printf("%.16f\n",fdiff);
+	    if(fdiff >= BIGGEST_DIFF || fdiff >= SMALLEST_DIFF) {
+	      printf("There is different between between naive and blocked algorithm result at Matrix size=%d, block size=%d.\n",M[i],block[j]);
+	      abort();
+	    }
+          }
+        }
+      }
+
+      if(dflag == 1){
+        /* ////printout result to check for double
+        for(m = 0; m < M[i]; m++){
+          for(k = 0; k < M[i]; k++){
+	    printf("%.16lf ",Cf[(m)*M[i] +(k)]);
+          }
+          printf("\n");
+        }
+        printf("\n\n");
+        for(m = 0; m < M[i]; m++){
+          for(k = 0; k < M[i]; k++){
+	    printf("%.16lf ",Cb_float[(m)*M[i] +(k)]);
+          }
+          printf("\n");
+        }
+	printf("\n\n");
+        */
+        //checking differences
+        for(m = 0; m < M[i]; m++){
+          for(k = 0; k < M[i]; k++){
+            double ddiff = abs(Cd[(m)*M[i] +(k)] - Cb_double[(m)*M[i] +(k)]);
+            //printf("%.16lf\n",ddiff);
+	    if(ddiff >= BIGGEST_DIFF || ddiff >= SMALLEST_DIFF) {
+	      printf("There is different between between naive and blocked algorithm result at Matrix size=%d, block size=%d.\n",M[i],block[j]);
+	      abort();
+	    }
+          }
+        }
+      }
+
       //reset Cb_float and Cb_double
       reset_mat(Cb_float,Cb_double,M[i]);
     }
     if(fflag==1) f_output_pointer += sprintf(f_output_pointer,"\n");
     if(dflag==1) d_output_pointer += sprintf(d_output_pointer,"\n");
+
     //free memory
     free(Af);
     free(Bf);
