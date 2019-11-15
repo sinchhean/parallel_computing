@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
     MPI_Status status;
     int data1;
     MPI_Recv(&data1,1,MPI_INT,MPI_ANY_SOURCE,MPI_ANY_TAG,MPI_COMM_WORLD,&status);
+    if(MPI_
   }
 
   
