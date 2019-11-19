@@ -55,6 +55,15 @@ int main(int argc, char *argv[])
       MPI_Recv(&data2,1, MPI_INT, id-1, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
     }
     printf("Process %d: data=%d, data1=%d, data2=%d\nAverage value = %f\n\n",id,data,data1,data2,(data+data1+data2)/3.0);
+  }else{
+    if(id == 0){
+      MPI_Send(&data, 1, MPI_INT, id+1, id, MPI_COMM_WORLD);
+      MPI_Recv(&data1,1, MPI_INT, id+1, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+    }else{
+      MPI_Send(&data, 1, MPI_INT, id-1, id, MPI_COMM_WORLD);
+      MPI_Recv(&data1,1, MPI_INT, id-1, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+    }
+    printf("Process %d: data=%d, data1=%d\nAverage value = %f\n\n",id,data,data1,(data+data1)/2.0);
   }
   MPI_Finalize();
   //printf("final data is %d\n.",data);
