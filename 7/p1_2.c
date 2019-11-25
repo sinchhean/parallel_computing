@@ -43,7 +43,7 @@ int main(int argc,char *argv[]) {
     x = h*((double)i - 0.5);
     sum += f(x);
   }
-  printf("sum[%d]=%.16f\n",id,sum);
+  //printf("sum[%d]=%.16f\n",id,sum);
   MPI_Gather(&sum, 1, MPI_DOUBLE, allsum, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
   if(id == 0){
     for(i=1;i<np;i++){

@@ -62,3 +62,47 @@ wall clock time = 0.086689
 std4dc15:7 s1250250[162]$ mpirun -np 3 ./p2 100000
 pi is approximately 2.0132658481597900, Error is 0.3591575770145444
 wall clock time = 0.855741
+
+=======================================================================================
+std4dc2:7 s1250250[159]$ mpirun -np 1 ./p2_2 1000
+pi is approximately 3.1413502693176270, Error is 0.0000771533100860
+wall clock time = 0.021779
+std4dc2:7 s1250250[160]$ mpirun -np 1 ./p2_2 10000
+pi is approximately 3.0994129180908203, Error is 0.0134262268059404
+wall clock time = 0.210187
+std4dc2:7 s1250250[169]$ mpirun -np 1 ./p2_2 100000
+pi is approximately 0.6710886359214783, Error is 0.7863858526805989
+wall clock time = 2.104276
+
+std4dc2:7 s1250250[155]$ mpicc -o p2_2 p2_2.c
+std4dc2:7 s1250250[156]$ mpirun -np 2 ./p2_2 1000
+pi is approximately 3.1420652866363525, Error is 0.0001504437712570
+wall clock time = 0.014494
+std4dc2:7 s1250250[157]$ mpirun -np 2 ./p2_2 10000
+pi is approximately 3.1856648921966553, Error is 0.0140286292548152
+wall clock time = 0.105154
+std4dc2:7 s1250250[158]$ mpirun -np 2 ./p2_2 100000
+pi is approximately 1.3421772718429565, Error is 0.5727717053611978
+wall clock time = 1.058870
+
+std4dc2:7 s1250250[182]$ mpirun -np 3 ./p2_2 1000
+pi is approximately 3.1416978836059570, Error is 0.0000334957544683
+wall clock time = 0.014539
+std4dc2:7 s1250250[183]$ mpirun -np 3 ./p2_2 10000
+pi is approximately 3.1901364326477051, Error is 0.0154519647868550
+wall clock time = 0.121437
+std4dc2:7 s1250250[179]$ mpirun -np 3 ./p2_2 100000
+pi is approximately 2.0132658481597900, Error is 0.3591575770145444
+wall clock time = 1.012211
+
+std4dc2:7 s1250250[186]$ mpirun -np 4 ./p2_2 1000
+pi is approximately 3.1414520740509033, Error is 0.0000447478570238
+wall clock time = 0.017241
+std4dc3:7 s1250250[54]$ mpirun -np 4 ./p2_2 10000
+pi is approximately 3.1596546173095703, Error is 0.0057493016158980
+wall clock time = 0.132402
+std4dc2:7 s1250250[191]$ mpirun -np 4 ./p2_2 100000
+pi is approximately 2.6843545436859131, Error is 0.1455434107223956
+wall clock time = 1.072093
+
+
