@@ -35,33 +35,16 @@ std4dc15:7 s1250250[151]$ mpirun -np 4 ./p1 100000
 pi is approximately 3.1415926735896820, Error is 0.0000000063661623
 wall clock time = 0.760592
 
----------------------------------------------------------------------------------
-pi is approximately 3.1413505077362061, Error is 0.0000770774190952
-wall clock time = 0.026350
-std4dc15:7 s1250250[154]$ mpirun -np 1 ./p2 10000
-pi is approximately 3.0994129180908203, Error is 0.0134262268059404
-wall clock time = 0.250368
-std4dc15:7 s1250250[155]$ mpirun -np 1 ./p2 100000
-pi is approximately 0.6710886359214783, Error is 0.7863858526805989
-wall clock time = 2.504245
-std4dc15:7 s1250250[156]$ mpirun -np 2 ./p2 1000
-pi is approximately 3.1420652866363525, Error is 0.0001504437712570
-wall clock time = 0.013760
-std4dc15:7 s1250250[159]$ mpirun -np 2 ./p2 10000
-pi is approximately 3.1856648921966553, Error is 0.0140286292548152
-wall clock time = 0.128673
-std4dc15:7 s1250250[158]$ mpirun -np 2 ./p2 100000
-pi is approximately 1.3421772718429565, Error is 0.5727717053611978
-wall clock time = 1.262842
-std4dc15:7 s1250250[160]$ mpirun -np 3 ./p2 1000
-pi is approximately 3.1416978836059570, Error is 0.0000334957544683
-wall clock time = 0.008631
-std4dc15:7 s1250250[161]$ mpirun -np 3 ./p2 10000
-pi is approximately 3.1901364326477051, Error is 0.0154519647868550
-wall clock time = 0.086689
-std4dc15:7 s1250250[162]$ mpirun -np 3 ./p2 100000
-pi is approximately 2.0132658481597900, Error is 0.3591575770145444
-wall clock time = 0.855741
+std4dc2:7 s1250250[80]$ mpirun -np 4 ./p1_2
+pi is approximately 3.1435917356731280, Error is 0.0006363275904184
+wall clock time = 0.000755
+std4dc2:7 s1250250[65]$ mpirun -np 4 ./p1_2 10
+pi is approximately 3.1417926444218738, Error is 0.0000636590589974
+wall clock time = 0.000724
+std4dc2:7 s1250250[66]$ mpirun -np 4 ./p1_2 100
+pi is approximately 3.1416126534981252, Error is 0.0000063661685449
+wall clock time = 0.001282
+
 
 =======================================================================================
 std4dc2:7 s1250250[159]$ mpirun -np 1 ./p2_2 1000
@@ -105,4 +88,13 @@ std4dc2:7 s1250250[191]$ mpirun -np 4 ./p2_2 100000
 pi is approximately 2.6843545436859131, Error is 0.1455434107223956
 wall clock time = 1.072093
 
-
+std4dc2:7 s1250250[68]$ mpirun -np 4 ./p2_2
+pi is approximately 3.1435922851562501, Error is 0.0006365024963284
+wall clock time = 0.000377
+std4dc2:7 s1250250[69]$ mpirun -np 4 ./p2_2 10
+pi is approximately 3.1417921875000001, Error is 0.0000635136162478
+wall clock time = 0.000310
+std4dc2:7 s1250250[70]$ mpirun -np 4 ./p2_2 100
+pi is approximately 3.1416093750000003, Error is 0.0000053225901799
+wall clock time = 0.001287
+================================================================================

@@ -12,8 +12,8 @@ int main(int argc,char *argv[]) {
   long long int i;
   double PI25DT = 3.141592653589793238462643;
   double startwtime, endwtime;
-  double  h, x;
-  float sum, allsum[MAX_NP],mypi;
+  double  h, x, mypi;
+  float sum, allsum[MAX_NP];
   int s[MAX_NP], e[MAX_NP];
 
   if (argc == 1) n = 1000;
