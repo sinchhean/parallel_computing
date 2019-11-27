@@ -1,4 +1,5 @@
 set term pngcairo
+set key left top
 set output "error.png"
 set title "Error rate of mypi (-np 4)"
 set xlabel "Value of n"
