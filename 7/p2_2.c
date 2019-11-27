@@ -4,7 +4,7 @@
 #include <math.h>
 #define MAX_NP 128
 
-double f(double a) {
+float f(float a) {
   return (4.0 / (1.0 + a*a));
 }
 int main(int argc,char *argv[]) {
@@ -12,7 +12,7 @@ int main(int argc,char *argv[]) {
   long long int i;
   double PI25DT = 3.141592653589793238462643;
   double startwtime, endwtime;
-  double  h, x, mypi;
+  float  h, x, mypi;
   float sum, allsum[MAX_NP];
   int s[MAX_NP], e[MAX_NP];
 
@@ -32,7 +32,7 @@ int main(int argc,char *argv[]) {
       e[i] = (n/np)*(i+1) + (i+1 == np? n % np : 0);
     }
   }
-  MPI_Bcast(&h, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+  MPI_Bcast(&h, 1, MPI_FLOAT, 0, MPI_COMM_WORLD);
   MPI_Bcast(s, np, MPI_INT, 0, MPI_COMM_WORLD);
   MPI_Bcast(e, np, MPI_INT, 0, MPI_COMM_WORLD);
   sum = 0.0;
